@@ -1,0 +1,147 @@
+getwd()
+nuevo_dir <- nuevo_dir<- "c:/Regresión_marina"
+setwd(nuevo_dir)
+getwd()
+
+#Ejercicio 1
+#Sé, se puede deducir información sobre eventos y fenómenos ocurridos en el pasado utilizando evidencia material que aún permanece presente.
+#Los restos materiales van a proporcionar grandes datos, como patrones de asentamiento, prácticas religiosas, tecnología usada, interacciones económicas, etc.
+#Pero es importante destacar que la interpretación de los restos materiales puede ser compleja y está sujeta diferentes hipótesis.
+
+#Ejercicio 2
+#No, el análisis de correlación lineal de Pearson implica que una variable cause cambios en la otra.
+#En cambio,simplemente evalúa la fuerza y la dirección de la relación lineal entre dos variables cuantitativas.
+
+#Ejercicio 3
+#La causalidad implica que existe una conexión directa entre una causa y un efecto, de modo que un cambio en la causa resulta en un cambio en el efecto de manera predecible y coherente. 
+#En resumen, la causalidad indica que un fenómeno (la causa) es la razón detras de otro fenómeno (el efecto). 
+#Este concepto es esencial en el ámbito científico y en la investigación, permite entender y explicar cómo funcionan las cosas en el mundo.
+
+#Imaginemos que en un sitio arqueológico se encuentran herramientas de piedra tallada, como hachas y cuchillos, que muestran signos de desgaste y uso. 
+#Junto con estas herramientas, se descubren restos de granos y semillas, así como evidencia de cultivos antiguos, como terrazas agrícolas.
+
+#En este caso, se puede inferir una relación causal entre la presencia de estas herramientas de piedra tallada y el desarrollo de la agricultura en la región. 
+#Se podría argumentar que el uso de herramientas más avanzadas y eficientes para la agricultura pudo haber permitido a las comunidades locales aumentar la productividad de sus cultivos, 
+#lo que a su vez pudo haber contribuido al desarrollo y crecimiento de la población, así como a cambios en la organización social y económica.
+
+#Ejercicio 4
+
+#Los parámetros son: Coeficientes de regresión (β): Representan la pendiente de la línea de regresión y muestran cuánto cambia la variable dependiente (Y) por cada unidad de cambio en la variable independiente (X).
+# Término de intercepción (β₀): Es el valor de Y cuando todas las variables independientes son iguales a cero. Es el punto en el que la línea de regresión corta el eje Y.
+# y Error aleatorio (ε): Representa la diferencia entre el valor observado de la variable dependiente y el valor predicho por el modelo de regresión. Estos errores se suponen normalmente distribuidos con media cero.
+
+#Ejercicio 5
+#No estás en lo correcto. 
+#En un plano cartesiano, el eje horizontal se denomina eje de abscisas o simplemente eje x, mientras que el eje vertical se llama eje de ordenadas o eje y. 
+#Por lo tanto, el eje x es el eje de las abscisas, mientras que el eje y es el eje de las ordenadas.
+
+#Ejercicio 6
+#En el contexto de la regresión múltiple,cuando se consideran múltiples variables independientes, se emplea un plano de regresión en lugar de una recta. 
+#Este plano de regresión es una superficie tridimensional que representa la relación entre la variable dependiente y dos o más variables independientes.
+
+#Ejercicio 7
+#Los supuestos del análisis de regresión lineal son:
+
+#Linealidad: La relación entre la variable independiente y la variable dependiente es lineal.
+#Homocedasticidad: La varianza de los errores es constante en todos los niveles de la variable independiente.
+#Normalidad de los residuos: Los residuos siguen una distribución normal alrededor de cero.
+#Independencia de los errores: Los errores de la regresión no están correlacionados entre sí.
+#Independencia de las observaciones: Las observaciones utilizadas en el análisis son independientes entre sí.
+#Ausencia de multicolinealidad: No existe una relación lineal perfecta entre dos o más variables independientes.
+
+#Ejercicio 8
+distancia <- c(1.1, 100.2, 90.3, 5.4, 57.5, 6.6, 34.7, 65.8, 57.9, 86.1)
+cuentas <- c(110, 2, 6, 98, 40, 94, 31, 5, 8, 10)
+modelo <- lm(cuentas ~ distancia)
+summary(modelo)
+plot(distancia, cuentas, main = "Regresión lineal", xlab = "Distancia", ylab = "Cuentas")
+abline(modelo, col = "red")
+
+#Ejercicio 9
+#El valor de m nos indicará cuánto cambia el número de cuentas cuando la distancia aumenta en una unidad.
+#El valor de b nos dará el número de cuentas esperado cuando la distancia es cero.
+
+#Ejercicio 10
+#Un intercepto de valor '0' en un modelo de regresión lineal implica que la relación entre la variable independiente y la variable dependiente pasa por el origen del sistema de coordenadas. 
+#Esto significa que cuando la variable independiente es cero, la variable dependiente también lo será. 
+#Esta situación puede tener implicaciones en la interpretación del modelo, la extrapolación de los resultados más allá del rango de los datos observados y la elección del tipo de modelo más adecuado para describir la relación entre las variables.
+
+#Ejercicio 11
+#El análisis de regresión lineal usa el método de los mínimos cuadrados con el objetivo de calcular los valores de los parámetros que configuran la recta de regresión. 
+#Es un método que minimiza la suma de los cuadrados de las diferencias entre los valores observados y los valores predichos por el modelo. 
+#En resumen, busca la recta que mejor se ajusta a los datos minimizando la distancia vertical entre los puntos de datos y la recta.
+
+#Ejercicio 12
+m <- 2.5
+b <- 10
+distancia_1 <- 1.1
+num_cuentas_estimado <- m * distancia_1 + b
+num_cuentas_real <- 105
+error <- num_cuentas_real - num_cuentas_estimado
+print(error)
+#Se pueden modificar los valores de m, b la distancia y el numero de cuentas real según el caso específico, este sería un ejemplo de como se calcula.
+
+#Ejercicio 13
+cuentas <- c(6,98,40,94,31,5,8,10)
+predicciones <- c(-6.682842, 85.520196,28.938591,84.216973, 53.69983,19.924631,28.504183,-2.121561)
+residuos<- cuentas - predicciones
+print(residuos)
+
+#Ejercicio 14
+residuos <- c(12.682842, 12.479804, 11.061409, 9.783027, -22.699830, -14.924631, -20.504183, 12.121561)
+shapiro.test(residuos)
+#El resultado de esta prueba nos dará como resultado si los residuos siguen una distribución normal o no, basándose en el valor p.
+#Si el valor p es menor que un nivel de significancia específico (como 0.05), entonces podríamos concluir que los residuos no se distribuyen normalmente. 
+#Si el valor p es mayor que el nivel de significancia, no tendríamos suficiente evidencia para rechazar la hipótesis nula, lo que sugeriría que los residuos sí se distribuyen normalmente
+#En este caso se puede comprobar que p es menor que 0,05 lo que significa que no se distribuyen normalmente.
+
+#Ejercicio 15
+#Para la modelización lineal, se necesitan dos conjuntos de datos:
+#Variables independientes que son las características que usamos para predecir algo y las independientes que es lo que intentamos predecir.
+#Para preparar ese conjunto de datos lo primero que hacemos es explorar esos datos, donde se elimina lo no necesario. A continuación,
+#se seleccionan las características importantes, las variables independientes más útiles. Se dividen los datos, uno para entrenar el modelo y otro para probarlo.
+#Se normalizan los datos, que se encuentren en la misma escala y en base a los datos del entrenamiento se crea el modelo. Finalmente se prueba el modelo y gracias a esto,
+#es posible predecir datos con cierto grado de precisión.
+
+#Ejercicio 16
+#Primero cargamos librerías
+#Creamos el data frame con los datos obtenidos anteriormente
+datos <- data.frame(cuentas=cuentas, predicciones=predicciones)
+
+#Definimos el modelo de regresión lineal
+modelo <- lm(cuentas ~ predicciones, datos)
+
+#Realizamos la validación cruzada simple con 5 repeticiones
+control <- trainControl(method = "cv", number = 5)
+cv <- train(cuentas ~ predicciones, datos, method = "lm", trControl = control)
+print(cv)
+
+#Ejercicio 17
+#Cuando los coeficientes de regresión se calculan con un intervalo de confianza del 95%, significa que hay un 95% de probabilidad de que el verdadero valor del coeficiente de regresión esté dentro de ese intervalo. 
+#Por lo tanto, la probabilidad de que la correlación lineal entre los coeficientes de regresión y la variable de respuesta se deba al azar es de 1 - 0.95 = 0.05, es decir, 5%.
+
+#Si tienes un nivel de significación (Alpha) de 0.01, significa que estás dispuesto a aceptar un error de tipo I del 1%. 
+#Por lo tanto, el intervalo de confianza correspondiente para tus coeficientes de regresión sería del 99%, 
+#ya que deseas estar más seguro de que los intervalos contienen los verdaderos valores de los coeficientes.
+
+#Ejercicio 18
+#Cuando las estimaciones dadas por un modelo lineal son menos precisas en un rango de valores con respecto a otro, sugiere la presencia de heterocedasticidad. 
+#La heterocedasticidad se refiere a la situación en la que la variabilidad de los errores no es constante en todos los niveles de la variable independiente, 
+#lo que significa que la dispersión de los errores varía a lo largo del rango de los valores de la variable explicativa. Mientras que, en presencia de homocedasticidad, 
+#la variabilidad de los errores es constante en todos los niveles de la variable independiente.
+
+#Ejercicio 19
+#La medida de precisión estadística que indica el porcentaje de variabilidad explicada de la variable dependiente por nuestro modelo lineal es el coeficiente de determinación R cuadrado
+#Este coeficiente varía entre 0 y 1, y representa la proporción de la varianza total de la variable dependiente que es explicada por el modelo de regresión lineal. 
+#Un R cuadrado cercano a 1 indica que el modelo explica una gran parte de la variabilidad de la variable dependiente, 
+#mientras que un R cuadrado cercano a 0 indica que el modelo no explica mucha variabilidad y puede ser ineficaz para predecir la variable dependiente.
+
+#Ejercicio 20
+#Una observación atípica, también conocida como valor atípico o outlier, es un punto de datos que se desvía significativamente del resto de los datos en un conjunto. 
+#Estos valores pueden ser el resultado de errores en la medición, fenómenos raros o simplemente representar una variabilidad natural en los datos. 
+#Los valores atípicos pueden distorsionar los resultados de un análisis estadístico, especialmente en modelos de regresión, ya que pueden ejercer una influencia desproporcionada en la estimación de los parámetros del modelo.
+
+#Por otro lado, una observación que produce apalancamiento en el modelo es una observación que tiene una influencia inusualmente grande en la estimación de los coeficientes de regresión. 
+#Estas observaciones pueden tener valores extremos en una o más variables explicativas y pueden coger el ajuste del modelo hacia ellas. 
+#El apalancamiento puede distorsionar los resultados del modelo, especialmente si hay observaciones con apalancamiento alto y valores atípicos en el conjunto de datos.
+
